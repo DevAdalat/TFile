@@ -1,0 +1,49 @@
+name: t_file
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: 3.3.7
+
+dependencies:
+  bloc: ^8.1.0
+  flutter:
+    sdk: flutter
+  go_router: ^5.2.0
+  flutter_bloc: ^8.1.1
+  flutter_localizations:
+    sdk: flutter
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  lottie: ^2.0.0
+  dynamic_color: ^1.5.4
+  file_picker: ^5.2.2
+  introduction_screen: ^3.0.2
+  intl: ^0.17.0
+  intro_screen_onboarding_flutter: ^1.0.0
+  intl_phone_field: ^3.1.0
+  email_validator: ^2.1.17
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^1.1.3
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/lottie/cloud_upload.json
+    - assets/lottie/github_logo.json
+    - assets/lottie/new_user.json
+    - assets/lottie/password.json
+    - assets/lottie/secure.json
+    - assets/lottie/telegram.json
+    - assets/lottie/telegram_mail.json
+    - assets/lottie/telegram_sms.json
+    - assets/lottie/telegram_sms1.json
