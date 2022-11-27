@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_scrolling_fab_animated/flutter_scrolling_fab_animated.dart';
 import 'package:t_file/app/screens/home/bloc/home_bloc.dart';
-import 'package:t_file/app/screens/home/bloc/home_state.dart';
+import 'package:t_file/app/widgets/animated_fab.dart';
+import 'package:t_file/app/widgets/custom_sliver_appbar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,25 +23,6 @@ class HomeView extends StatelessWidget {
             ),
             isMainView: true,
           ),
-//        SliverAppBar.large(
-//          flexibleSpace: DecoratedBox(
-//            decoration: BoxDecoration(
-//							color: Theme.of(context).primaryColor.withAlpha(60),
-//              borderRadius: const BorderRadius.only(
-//                bottomLeft: Radius.circular(27),
-//                bottomRight: Radius.circular(27),
-//              ),
-//            ),
-//						child: Container(),
-//          ),
-//          elevation: 10,
-//          shape: const RoundedRectangleBorder(
-//            borderRadius: BorderRadius.only(
-//              bottomLeft: Radius.circular(30),
-//              bottomRight: Radius.circular(30),
-//            ),
-//          ),
-//        ),
           SliverGrid(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -54,7 +35,7 @@ class HomeView extends StatelessWidget {
                           Spacer(),
                           Center(
                             child: Icon(
-                              Icons.lan,
+                              Icons.folder_rounded,
                               size: 59,
                             ),
                           ),
@@ -77,86 +58,9 @@ class HomeView extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: ScrollingFabAnimated(
-        color: Theme.of(context).primaryColor,
-        radius: 15,
-        elevation: 10,
+      floatingActionButton: CustomFab(
         scrollController: bloc.scrollController,
-        text: const Text(
-          'Upload',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        icon: const Icon(
-          Icons.upload_rounded,
-          color: Colors.white,
-        ),
-        onPress: () {},
       ),
-    );
-  }
-}
-
-class CustomSliverAppBar extends StatelessWidget {
-  const CustomSliverAppBar({
-    super.key,
-    required this.title,
-    this.actions,
-    this.bottom,
-    this.isMainView = false,
-    this.onBackButtonPressed,
-  });
-  final Widget title;
-  final List<Widget>? actions;
-  final PreferredSizeWidget? bottom;
-  final bool isMainView;
-  final Function()? onBackButtonPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      elevation: 15,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
-        ),
-      ),
-      pinned: true,
-      expandedHeight: 150,
-      automaticallyImplyLeading: !isMainView,
-      flexibleSpace: DecoratedBox(
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor.withAlpha(60),
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
-          ),
-        ),
-        child: FlexibleSpaceBar(
-          titlePadding: EdgeInsets.only(
-            bottom: bottom != null ? 16.0 : 14.0,
-            left: isMainView ? 20.0 : 55.0,
-          ),
-          title: title,
-        ),
-      ),
-      leading: isMainView
-          ? null
-          : IconButton(
-              icon: Icon(
-                Icons.arrow_back,
-                color: Theme.of(context).textTheme.headline6!.color,
-              ),
-              onPressed:
-                  onBackButtonPressed ?? () => Navigator.of(context).pop(),
-            ),
-      backgroundColor: MaterialStateColor.resolveWith(
-        (states) => states.contains(MaterialState.scrolledUnder)
-            ? Theme.of(context).colorScheme.surface
-            : Theme.of(context).canvasColor,
-      ),
-      actions: actions,
-      bottom: bottom,
     );
   }
 }
