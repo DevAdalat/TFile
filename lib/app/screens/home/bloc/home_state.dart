@@ -3,4 +3,6 @@
 enum HomeState {
   InitialHomeState,
   UpdateFileState,
+  FabExpandState,
+  FabCollpasedState,
 }
