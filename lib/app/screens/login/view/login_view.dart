@@ -4,6 +4,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:t_file/app/screens/login/bloc/login_bloc.dart';
 import 'package:t_file/app/screens/login/bloc/login_state.dart';
 import 'package:t_file/l10n/l10n.dart';
@@ -80,6 +81,7 @@ class LoginView extends StatelessWidget {
                 );
               }
               return IntlPhoneField(
+                invalidNumberMessage: l10n.invalidPhoneNumber,
                 autofocus: true,
                 keyboardAppearance: Brightness.light,
                 dropdownDecoration: BoxDecoration(
@@ -87,6 +89,11 @@ class LoginView extends StatelessWidget {
                 ),
                 controller: bloc.loginInputField,
                 initialCountryCode: 'IN',
+                pickerDialogStyle: PickerDialogStyle(
+                  searchFieldInputDecoration: InputDecoration(
+                    hintText: l10n.searchContry,
+                  ),
+                ),
                 onCountryChanged: (value) => bloc.maxLength = value.maxLength,
                 onChanged: (value) {
                   if (value.number.length == bloc.maxLength) {

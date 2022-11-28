@@ -1,7 +1,23 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+  	"nextButtonTitle": "Próximo",
+		"doneButtonName": "Hecho",
+		"your": "Su",
+		"email": "Dirección de correo electrónico",
+		"phoneNo": "Número de teléfono",
+		"loginPhoneAuthDesc": "Seleccione el código de su país e ingrese su número de teléfono",
+		"loginEmailAuthDesc": "Ingrese su dirección de correo electrónico, Telegram le enviará una OTP para verificar su correo electrónico",
+		"emailFieldHintText": "Ingrese el correo electrónico aquí",
+		"emailFieldLabelText": "Correo electrónico",
+		"unlimitedCloudStorageTitle": "Almacenamiento ilimitado en la nube ",
+		"unlimitedCloudStorageDesc": "TFile le brinda almacenamiento ilimitado en la nube usando la API de Telegram ",
+		"extraLayerEncryptionTitle": "Capa adicional de cifrado ",
+		"extraLayerEncryptionDesc": "El archivo se cifrará antes de subirlo",
+		"openSourceTitle": "Fuente abierta ",
+		"openSourceDesc": "TFile Always será de código abierto y el código fuente estará disponible en GitHub",
+		"homePageTitle": "Hogar",
+		"homePageUploadButton": "Subir",
+		"invalidPhoneNumber": "Numero de telefono invalido",
+		"searchContry": "buscar pais"
+
 }

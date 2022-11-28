@@ -20,5 +20,7 @@
 		"openSourceTitle": "Open Source",
 		"openSourceDesc": "TFile always will be open source, and source code available at GitHub",
 		"homePageTitle": "Home",
-		"homePageUploadButton": "Upload"
+		"homePageUploadButton": "Upload",
+		"invalidPhoneNumber": "Invalid Phone Number",
+		"searchContry": "Search country"
 }
