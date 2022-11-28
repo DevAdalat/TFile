@@ -11,7 +11,7 @@ A Very Good Project created by Very Good CLI.
 ---
 
 ##Note
-This is under development
+This app is under development
 
 ---
 
@@ -35,8 +35,6 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 # Production
 $ flutter run --flavor production --target lib/main_production.dart
 ```
-
-_\*T File works on iOS, Android, Web, and Windows._
 
 ---
 

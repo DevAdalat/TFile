@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tfile.telegram.unlimited.storage">
    <application
-        android:label="${appName}"
+		    android:label="TFile"
+		    android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

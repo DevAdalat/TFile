@@ -9,11 +9,16 @@ jobs:
     steps:
       - name: clone repo
         uses: actions/checkout@v3
+      - name: Base64 secret to file
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          encodedString: ${{ secrets.APK_SIGNING_KEY }}
+          fileName: release.keystore
+          fileDir: android/app
       - name: Setup flutter
         uses: subosito/flutter-action@v2
       - name: build APK
         run: ./build.sh
       - name: Send apk
         run: |
-          curl -F document=@"build/app/outputs/flutter-apk/app-release.apk" https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendDocument?chat_id=${{ secrets.TELEGRAM_TO }}
           curl -F document=@"build/app/outputs/flutter-apk/app-arm64-v8a-release.apk" https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendDocument?chat_id=${{ secrets.TELEGRAM_TO }}
