@@ -1,13 +1,19 @@
-name: t_file
+name: Build and Release
 
-on: [pull_request, push]
+on: [workflow_dispatch]
 
 jobs:
-  semantic-pull-request:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
-
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      flutter_version: 3.3.8
+    name: Build APK
+    runs-on: ubuntu-22.04
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v1
+      - name: Setup flutter
+        uses: subosito/flutter-action@v2
+      - name: build APK
+        run: ./build.sh
+      - name: Send apk
+        run: |
+          curl -F document=@"build/app/outputs/flutter-apk/app-release.apk" https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendDocument?chat_id=${{ secrets.TELEGRAM_TO }}
+          curl -F document=@"build/app/outputs/flutter-apk/app-arm64-v8a-release.apk" https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendDocument?chat_id=${{ secrets.TELEGRAM_TO }}
