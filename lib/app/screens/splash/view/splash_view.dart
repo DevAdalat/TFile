@@ -19,8 +19,8 @@ class SplashView extends StatelessWidget {
       body: IntroductionScreen(
         pages: [
           PageViewModel(
-            title: 'Unlimited Cloud Stoarge',
-            body: 'TFile Gives You Unlimited Cloud Storage Using Telegram',
+            title: l10n.unlimitedCloudStorageTitle,
+            body: l10n.unlimitedCloudStorageDesc,
             image: Center(
               child: Lottie.asset(
                 'assets/lottie/cloud_upload.json',
@@ -31,16 +31,15 @@ class SplashView extends StatelessWidget {
             ),
           ),
           PageViewModel(
-            title: 'Extra Layer Encryption',
-            body: 'File will be encrypted before it is uploaded',
+            title: l10n.extraLayerEncryptionTitle,
+            body: l10n.extraLayerEncryptionDesc,
             image: Center(
               child: Lottie.asset('assets/lottie/secure.json'),
             ),
           ),
           PageViewModel(
-            title: 'Open Source',
-            body:
-                'TFile will be always open source, and source code available on GitHub.',
+            title: l10n.openSourceTitle,
+            body: l10n.openSourceDesc,
             image: Center(
               child: Lottie.asset('assets/lottie/github_logo.json'),
             ),
@@ -55,12 +54,6 @@ class SplashView extends StatelessWidget {
                   isEmailLogin: false,
                 ),
               );
-//            Navigator.pushReplacement(
-//              context,
-//              MaterialPageRoute<void>(
-//                builder: (context) => const LoginPage(),
-//              ),
-//            );
             }
           },
           builder: (context, state) {

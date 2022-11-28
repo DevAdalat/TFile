@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomFab extends StatefulWidget {
-  const CustomFab({super.key, required this.scrollController});
+  const CustomFab(
+      {super.key, required this.scrollController, required this.label});
   final ScrollController scrollController;
+  final String label;
 
   @override
   State<StatefulWidget> createState() {
@@ -41,7 +43,7 @@ class _CustomFabState extends State<CustomFab> {
       child: isFabExpanded
           ? FloatingActionButton.extended(
               onPressed: () {},
-              label: const Text('Upload'),
+              label: Text(widget.label),
               icon: const Icon(Icons.upload_rounded),
             )
           : FloatingActionButton(

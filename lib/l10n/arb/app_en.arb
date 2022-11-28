@@ -5,5 +5,20 @@
         "description": "Text shown in the AppBar of the Counter Page"
     },
 		"nextButtonTitle": "Next",
-		"doneButtonName": "Done"
+		"doneButtonName": "Done",
+		"your": "Your",
+		"email": "Email Address",
+		"phoneNo": "Phone Number",
+		"loginPhoneAuthDesc": "Please select your country code and enter your Phone Number",
+		"loginEmailAuthDesc": "Please enter your Email address, Telegram will send you a OTP to verify your Email",
+		"emailFieldHintText": "Enter Email Here",
+		"emailFieldLabelText": "Email",
+		"unlimitedCloudStorageTitle": "Unlimited Cloud Storage",
+		"unlimitedCloudStorageDesc": "TFile gives you unlimited cloud storage using Telegram API",
+		"extraLayerEncryptionTitle": "Extra layer Encryption",
+		"extraLayerEncryptionDesc": "File will be encrypt before uploading",
+		"openSourceTitle": "Open Source",
+		"openSourceDesc": "TFile always will be open source, and source code available at GitHub",
+		"homePageTitle": "Home",
+		"homePageUploadButton": "Upload"
 }

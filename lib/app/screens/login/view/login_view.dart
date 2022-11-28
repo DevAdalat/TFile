@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:t_file/app/screens/login/bloc/login_bloc.dart';
 import 'package:t_file/app/screens/login/bloc/login_state.dart';
+import 'package:t_file/l10n/l10n.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key, required this.isEmailLogin});
@@ -13,6 +14,7 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -32,7 +34,7 @@ class LoginView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Your ${isEmailLogin ? "Email Adderess" : "Phone Number"}',
+                      '${l10n.your} ${isEmailLogin ? l10n.email : l10n.phoneNo}',
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -40,8 +42,8 @@ class LoginView extends StatelessWidget {
                     ),
                     Text(
                       isEmailLogin
-                          ? 'Please enter your email address, Telegram will send you a OTP for varification'
-                          : 'Please select your country code and enter your phone number',
+                          ? l10n.loginEmailAuthDesc
+                          : l10n.loginPhoneAuthDesc,
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -59,8 +61,8 @@ class LoginView extends StatelessWidget {
                   child: TextField(
                     controller: bloc.loginInputField,
                     decoration: InputDecoration(
-                      hintText: 'Enter Email here',
-                      labelText: 'Email',
+                      hintText: l10n.emailFieldHintText,
+                      labelText: l10n.emailFieldLabelText,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide:
