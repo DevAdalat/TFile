@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:t_file/app/bloc/app_bloc.dart';
 import 'package:t_file/app/screens/home/bloc/home_bloc.dart';
 import 'package:t_file/app/widgets/animated_fab.dart';
 import 'package:t_file/app/widgets/custom_sliver_appbar.dart';
-import 'package:t_file/app/widgets/custom_snackbar.dart';
 import 'package:t_file/l10n/l10n.dart';
 
 class HomeView extends StatelessWidget {

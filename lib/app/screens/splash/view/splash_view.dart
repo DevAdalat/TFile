@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
+import 'package:t_file/app/bloc/app_bloc.dart';
 import 'package:t_file/app/screens/login/login.dart';
 import 'package:t_file/app/screens/splash/bloc/splash_bloc.dart';
 import 'package:t_file/app/utils/extention.dart';
@@ -29,6 +30,25 @@ class SplashView extends StatelessWidget {
                     height: 175,
                     animate: true,
                     fit: BoxFit.cover,
+                  ),
+                ),
+                footer: ListTile(
+                  title: Text("Change Language"),
+                  trailing: DropdownButton<String>(
+                    onChanged: ((value) {
+                      context.read<AppBloc>().changeLocal(value!);
+                    }),
+                    items: [
+                      DropdownMenuItem(
+                        child: Text("English"),
+                        value: "en",
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Spanish"),
+                        value: "es",
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               ),

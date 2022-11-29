@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:t_file/app/bloc/app_bloc.dart';
-import 'package:t_file/app/screens/home/home.dart';
 import 'package:t_file/app/screens/splash/splash.dart';
 import 'package:t_file/l10n/l10n.dart';
 
