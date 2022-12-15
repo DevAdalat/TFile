@@ -20,7 +20,7 @@ dependencies:
   lottie: ^2.0.0
   dynamic_color: ^1.5.4
   file_picker: ^5.2.4
-  introduction_screen: ^3.1.0
+  introduction_screen: ^3.1.1
   intl: ^0.17.0
   intro_screen_onboarding_flutter: ^1.0.0
   intl_phone_field: ^3.1.0
